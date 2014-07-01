@@ -1,0 +1,34 @@
+<!-- STANDARD CLOSE BUTTON (UNFORTUNATELY THIS CANNOT BE SOLVED WITH A PSEUDO ELEMENT AS IT IS UNSELECTABLE BY JQUERY) -->
+<div class="view_close"></div>
+
+<header class="view_header">
+	<h2></h2>
+</header>
+
+<div id="player_wrapper" class="view">
+
+	<header id="player_header">
+		<h4><span class="ch_title sel">Episode title</span></h4>		
+	</header>
+	
+	<video id="html5player" width="512" height="288" controls>
+		<source src="<%=playoutURL%>" type="video/mp4">
+	</video>
+	
+	<div id="jwplayer">
+	
+	</div>
+	
+	<div id="player_annotation_controls">
+		<nav id="player_annotation_form">
+			<ul>
+				<li><label for="ply_ann_label">Label</label></li>
+				<li><input id="ply_ann_label" type="text"></li>
+				<li><input id="ply_ann_start" type="text"></li>
+				<li><input id="ply_ann_end" type="text"></li>
+				<li><div class="ply_ann_save button small" title="View sub types">Save</div></li>
+			</ul>
+		</nav>
+	</div>
+
+</div>

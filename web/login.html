@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+</head>
+
+<body>
+
+	<form action="/login" method="POST">{% csrf_token %}
+		<label for="username">Gebruikersnaam</label>
+		<input id="username" name="username" type="text"/>
+		<label for="password">Wachtwoord</label>
+		<input id="password" name="password" type="password"/>
+		<input type="submit" value="Login"/>
+	</form>
+
+</body>
+
+</html>

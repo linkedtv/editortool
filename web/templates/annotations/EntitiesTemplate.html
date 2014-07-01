@@ -1,0 +1,32 @@
+<div id="nes_wrapper">
+	
+	<div id="nes_types">
+		<div class="ne_types button small%>">all</div>
+		<% _.each(types, function(type){ %>
+			<div class="ne_types button small <%=mappings[type]%>"><%=type%></div>
+		<% }); %>
+		<% if(selectedCategory != null && selectedCategory != 'all') { %>
+		&nbsp;|&nbsp;<h3>Category: <%=selectedCategory%></h3>
+		<% } else {%>
+		&nbsp;|&nbsp;<h3>All categories</h3>
+		<%}%>
+	</div>
+	
+	<ul class="original nes">
+		<% _.each(annotations, function(ne, index){ %>
+			
+			<li id="__new__<%=index+1%>" class="ne_wrapper <%=Object.keys(ne.get('enrichments')).length > 0 ? 'hl' : ''%>">							
+				
+				<div id="<%=ne.cid%>" class="ne <%=ne.get('confidenceClass')%>">
+					<div class="ne_meta">
+						<div class="ne_uri"><%=ne.get('bodyURI')%></div>
+						<a href="javascript:void(0);"><%=ne.get('label')%></a>
+					</div>
+				</div>
+				
+			</li>
+
+		<% }); %>
+	</ul>
+
+</div>

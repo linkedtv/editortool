@@ -1,0 +1,11 @@
+/* footer */
+
+/*placeholder element from home.html*/
+#footer {
+	width:100%;
+	display:none;
+}
+
+#footer_wrapper {
+	padding:10px;
+}

@@ -1,0 +1,124 @@
+/* ------------------ Chapter view ------------------ */
+
+/*placeholder element from home.html*/
+#chapters {
+	position:relative;
+	display:none;
+	width:100%;
+	margin-bottom:10px;
+}
+
+#chapters_wrapper {
+	width:100%;
+}
+
+#chapter_header {
+	background-color: #FFEE88;
+	border-bottom:1px dotted #888;	
+	margin-bottom:10px;
+	width:100%;
+	display:table;
+}
+
+#chapter_header > h4 {
+	padding:10px 0px 0px 10px;
+	margin:0px;
+	display:table-cell;	
+}
+
+#chapter_form {
+	display:table-cell;
+	text-align:center;
+}
+
+#chapter_form ul {
+	list-decoration:none;
+	margin:0px;
+	padding:5px;
+}
+
+#chapter_form ul li {
+	display:inline;
+}
+
+/* ------------------ Editor ------------------ */
+
+#ch_title {
+	width:120px;
+}
+
+#ch_segment_type {
+	background: #fff;
+	width: 120px;	
+	border: 1px solid #e3e3e3;
+	font-size:10pt;
+	border-radius: 0;	
+	vertical-align:middle;
+}
+
+#ch_start, #ch_end {
+	width:54px;
+}
+
+/* ------------------ List ------------------ */
+
+.chapters {
+	/*border-top:1px dashed #888;*/	
+	margin:5px 0px 0px 0px;
+	list-style:none;	
+	text-align:center;	
+}
+
+.chapters li {
+	display:inline-block;
+}
+
+.sel.chapter, .hover.chapter {	
+	border: 1px solid #F7F7F7;
+	-moz-box-shadow: 0 0 2px 2px #888;
+	-webkit-box-shadow: 0 0 2px 2px #888;
+	box-shadow: 0 0 2px 2px #888;	
+}
+
+.chapter {
+	background-color:#E3E3E3;
+	display:table;
+	cursor:pointer;
+	border-top:1px solid #e3e3e3;
+	border-left:1px solid #e3e3e3;
+	border-right:1px solid #e3e3e3;
+	border-bottom:1px solid #f7f7f7;
+	text-align:center;
+}
+
+.chapter img {
+	border:1px solid #ffee88;
+	display:table-row;
+	width:105px;
+	height:79px;
+}
+
+.chapter label {
+	display:table-row;	
+}
+
+.sel.chapter label {
+	background-color: #FFEE88;	
+}
+
+/* ----------------- Chapter editor ------------- */
+
+#chapter_shots {
+	padding:10px;
+	margin:0px;
+}
+
+.chapter_shot {
+	item-decoration:none;
+	display:inline;
+	cursor:pointer;
+}
+
+.sel.chapter_shot img {
+	border: 2px solid #f00;
+}

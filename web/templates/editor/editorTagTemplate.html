@@ -1,0 +1,36 @@
+<div class="ec_editors_choices">
+	
+	<ul class="ec_chapters">
+		<% _.each(chapters, function(chapter){ %>
+		
+		<!-- CHAPTER -->
+			<li id="__ec__<%=chapter.cid%>" class="ec_chapter <%= chapter.cid == selectedChapter.cid ? 'sel' : ''%>">
+				
+				<!-- CHAPTER HEADER -->
+				<header>
+					
+					<!-- TITLE AND TIME (hh:MM:ss) -->
+					<div class="ec_chapter_meta">
+						[<%=chapter.get('prettyStartTime')%>]&nbsp;
+						<span class="ch_title <%= chapter.cid == selectedChapter.cid ? 'sel' : ''%>"><%= chapter.get('title')%></span>
+					</div>
+															
+					<div class="tag_button ltv_button <%=isDialogOpen && chapter.cid == selectedChapter.cid ? 'sel' : ''%>" title="Tag chapter"></div>
+				</header>
+				
+				<!-- THE LINKS -->
+				<% if(chapter.get('tags')) { %>
+					<div class="ec_chapter_tags">
+						<% _.each(chapter.get('tags'), function(tag) { %>							
+							<div id="__tag__<%=tag.id%>" class="button small <%=mappings[tag.category]%> ec_chapter_tag" title="<%=tag.label%>"><%=tag.label%></div>							
+						<% }); %>				
+					</div>
+					
+				<%} %>
+				
+			</li>			
+		<%});%>
+		
+	</ul>
+
+</div>

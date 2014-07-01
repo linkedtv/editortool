@@ -1,0 +1,64 @@
+/* ------------------- editorMainTemplate.html -------------------- */
+
+/* placeholder from home.html*/
+#editor {
+	display:none;
+	position:relative;
+	clear:left;
+	float:left;
+	height:80%;
+	margin-bottom: 10px;
+}
+
+#editor_wrapper {
+	overflow:hidden;
+	height:80%;
+	width:100%;
+	float:left;
+}
+
+#editor_header {
+	background-color:#FFEE88;
+    border-bottom:1px dotted #888888;
+    margin-bottom:10px;
+    width:100%;
+    display:table;
+}
+
+#editor_header > h4 {
+	display: table-cell;
+	color:dodgerblue;
+    margin: 0;
+    padding: 10px 0 0 10px;
+}
+
+#editor_tabs {
+	display:table-cell;
+}
+
+#editor_tabs ul {
+	list-decoration:none;
+	margin:0px;
+	padding:5px;
+}
+
+#editor_tabs ul li {
+	display:inline;
+}
+
+#editor_switch {
+	display:table-cell;
+	vertical-align:middle;
+	text-align:right;
+	cursor:pointer;
+	border-right:5px solid #ffee88;
+}
+
+#editor_switch:hover {
+	opacity:0.6;
+}
+
+#ne_view, #tag_view, #face_view {
+	display:none;
+	height:80%;
+}

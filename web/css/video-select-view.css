@@ -1,0 +1,19 @@
+/*CSS for views related to the VideoModel*/
+
+
+/*placeholder element from home.html*/
+
+#videos {	
+	width:100%;
+	display:none;
+}
+
+#videos_wrapper {	
+	padding:20px;
+	margin:10px 0px;
+}
+
+#videos_wrapper:after {
+	clear:both;
+	content:"";
+}

@@ -1,0 +1,66 @@
+<div id="entity_details_dialog">
+
+    <!-- THUMBNAIL -->
+	<div class="ne_thumb">
+	    <img src="<%=entity.get('image')%>">
+	</div>
+	
+	<!-- THE ACTUAL NAMED ENTITY -->
+	<div class="ne <%=entity.get('confidenceClass')%>">
+	
+	    <div class="ne_meta">
+	        <div class="ne_uri"><%=entity.get('bodyURI')%></div>
+	        <a href="javascript:void(0);"><%=entity.get('label')%></a>
+	    </div>
+	</div>
+	
+	<!-- DISAMBIGUATION LINK -->
+	<div class="ne_dbpedia_link">
+	    <h4>Link to external vocabulary</h4>
+	    <% if(entity.get('disambiguationURL')) { %>
+	        <a href="<%=entity.get('disambiguationURL')%>" target="_new"><%=entity.get('disambiguationURL')%></a>                                                                               
+	    <%} else {%>
+	        <span class="warning">No link to external vocabulary available</span>
+	    <%}%>
+	</div>
+	                
+	<!-- ENRICHMENTS -->
+	<div class="ne_enrichments">
+	    <div class="link_list">
+	        <h4>Enrichments</h4>
+	        <ul>
+	            <%if (Object.keys(entity.get('enrichments')).length == 0) {%>
+	                <li><span class="warning">No enrichments were derived from this entity</span></li>
+	            <%} else { %>
+	                <li><span>
+	                <%=Object.keys(entity.get('enrichments')).length%> enrichments were derived from this entity                                
+	                </span></li>
+	            <% } %>
+	        </ul>
+	    </div>
+	</div>
+	
+	<!-- INVOLVED ENTITIES -->
+	
+	<div class="ne_sub_types">
+	    <h4>Sub types of: <%=entity.get('type')%></h4>
+	    
+	    <!-- NERD TYPE -->
+	    <div class="ne_type button small <%=mappings[entity.get('type').toLowerCase()]%>" title="View sub types">
+	        <%=entity.get('type')%>
+	    </div>
+	    
+	    <!-- DISAMBIGUATION URL -->
+	    <% if (entity.get('disambiguationURL').length > 0) { %>
+	        <div class="ne_type button small blue"><%=entity.get('disambiguationURL')%></div>
+	    <%}%>
+	    
+	    <!-- DISPLAY SUB TYPES (FREEBASE, DBPEDIA, ...) -->
+	    <% _.each(entity.get('subTypes'), function(st, stIndex){ %>
+	        <% _.each(st, function(stVal, stvIndex){ %>                                         
+	            <div class="ne_type button small <%=mappings[stIndex]%>"><%=stVal%></div>
+	        <%});%>
+	    <%});%>
+	</div>
+
+</div>

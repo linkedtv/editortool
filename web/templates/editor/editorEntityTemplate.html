@@ -1,0 +1,68 @@
+<div class="ec_editors_choices">
+
+	<ul class="ec_chapters">
+		<% _.each(chapters, function(chapter){ %>
+		
+			<!-- CHAPTER -->
+			<li id="__ef__<%=chapter.cid%>" class="ec_chapter <%= chapter.cid == selectedChapter.cid ? 'sel' : ''%>">
+				
+				<!-- CHAPTER HEADER -->
+				<header>
+					
+					<!-- TITLE AND TIME (hh:MM:ss) -->
+					<div class="ec_chapter_meta">
+						[<%=chapter.get('prettyStartTime')%>]&nbsp;
+						<span class="ch_title <%= chapter.cid == selectedChapter.cid ? 'sel' : ''%>"><%= chapter.get('title')%></span>
+					</div>
+					
+					<!-- TABS FOR EACH CATEGORY -->
+					<ul class="ef_tabs">
+						<% if(chapterCategories[chapter.cid] != undefined) { %>
+							<% _.each(chapterCategories[chapter.cid], function(count, cat){ %>
+								<!-- TODO add green button for categories with numbers. A red one without numbers-->
+								<% if(count == 0) { %>
+									<div class="button small red"><%=cat%></div>
+								<% } else if (count > 0){ %>
+									<div class="button small green"><%=cat%></div>
+								<% }%>
+								(<%=count%>)
+							<% }); %>
+						<%}%>
+					</ul>
+					<div class="add_button ltv_button <%=isDialogOpen && chapter.cid == selectedChapter.cid ? 'sel' : ''%>" title="Add annotation"></div>					
+				</header>
+				
+				<!-- SELECTED ENTITIES FOR EACH CHAPTER -->
+				
+				<ul class="ec nes">
+					<% if(chapterAnnotations[chapter.cid] != undefined) { %>
+						<% _.each(chapterAnnotations[chapter.cid], function(ne, index){ %>
+							
+							<li id="__ecw__<%=index+1%>" class="ne_wrapper ec <%=Object.keys(ne.get('enrichments')).length > 0 ? 'hl' : ''%> <%=selectedAnnotation && selectedAnnotation.cid == ne.cid ? 'sel' : ''%>">				
+							
+								<!-- THUMBNAIL -->
+								<div class="ne_thumb ec">
+									<img src="<%=ne.get('image')%>">
+								</div>
+								
+								<!-- THE ACTUAL NAMED ENTITY -->
+								<div id="<%=ne.cid%>" class="ne ec <%=ne.get('confidenceClass')%>">
+								
+									<div class="ne_meta ec">
+										<div class="del_button ltv_button"></div>
+										<a href="javascript:void(0);" title="View enrichments"><%=ne.get('label')%></a>										
+									</div>
+
+								</div>
+								
+							</li>
+						<% }); %>
+					<%}%>
+				</ul>
+				
+						
+			</li>			
+		<% }); %>
+	</ul>
+
+</div>

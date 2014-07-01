@@ -1,0 +1,78 @@
+/* --------------- AnnotationsView --------------- */
+
+/*placeholder from home.html*/
+
+#annotations {
+	display:none;	
+	width:49%;
+	position:fixed;
+	left:50%;
+	height:80%;
+}
+
+#annotations_wrapper {
+	width:100%;	
+	overflow:hidden;
+	height:85%;
+}
+
+#annotation_header {
+	background-color: #FFEE88;
+	border-bottom:1px dotted #888;	
+	margin-bottom:10px;
+	width:100%;
+	display:table;
+}
+
+#annotation_header > h4 {
+	padding:10px 0px 0px 10px;
+	margin:0px;
+	display:table-cell;	
+}
+
+#annotation_tabs {
+	display:table-cell;
+}
+
+#annotation_tabs ul {
+	list-decoration:none;
+	margin:0px;
+	padding:5px;
+}
+
+#annotation_tabs ul li {
+	display:inline;
+}
+
+#annotation_switch {
+	display:table-cell;
+	vertical-align:middle;
+	text-align:right;
+	cursor:pointer;
+	border-right:5px solid #ffee88;
+}
+
+#annotation_switch:hover {
+	opacity:0.6;
+}
+
+.annotation_layer {
+	
+}
+
+/* --------------- ConceptsView --------------- */
+
+/*placeholder from annotationsTemplate.html*/
+#concepts {
+	display:none;
+}
+
+#conceptss ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.concept {
+	display:inline;
+}

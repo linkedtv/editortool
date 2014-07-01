@@ -1,0 +1,20 @@
+<!-- STANDARD VIEW ELEMENT -->
+<div id="videos_wrapper" class="view">
+	
+	<!-- STANDARD CLOSE BUTTON (UNFORTUNATELY THIS CANNOT BE SOLVED WITH A PSEUDO ELEMENT AS IT IS UNSELECTABLE BY JQUERY) -->
+	<div class="view_close"></div>
+	
+	<label for="mr_select">Select video</label>
+		
+	<select id="mr_select">
+		<option value="-">-- select video --</option>
+	<% _.each(videos, function(video){ %>
+		<% if(id == video.get('id')){ %>
+			<option value="<%= video.get('id') %>" selected><%= video.get('id') %></option>
+		<% } else { %>
+			<option value="<%= video.get('id') %>"><%= video.get('id') %></option>
+		<% }%> 
+	<% }); %>
+	</select>	
+	
+</div>

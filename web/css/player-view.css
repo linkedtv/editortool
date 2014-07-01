@@ -1,0 +1,62 @@
+/*player view*/
+
+/*placeholder from home.html*/
+#player {	
+	float:left;
+	display:none;
+	position:relative;
+	margin-bottom:10px;
+	width:100%;
+	min-width:512px;
+	z-index:3;
+}
+
+#player_header {
+	background-color: #FFEE88;
+	border-bottom:1px dotted #888;	
+	margin-bottom:10px;
+	width:100%;
+	display:table;	
+}
+
+#player_header > h4 {
+	padding:10px 20px;
+	margin:0px;
+}
+
+#player_wrapper {	
+	float:left;
+	width:100%;
+	text-align:center;
+}
+
+#jwplayer {
+	padding:10px;
+	margin:auto;
+}
+
+#player_annotation_controls {
+	text-align:center;	
+}
+
+#player_annotation_form {
+	
+}
+
+#player_annotation_form ul {
+	list-decoration:none;
+	margin:0px;
+	padding:5px;
+}
+
+#player_annotation_form ul li {
+	display:inline;
+}
+
+#ply_ann_label {
+	width:120px;
+}
+
+#ply_ann_start, #ply_ann_end {
+	width:54px;
+}

@@ -1,0 +1,166 @@
+/* --------------- EntitiesView --------------- */
+
+/*placeholder from annotationsTemplate.html*/
+#nes {
+	display:none;
+    overflow: auto;
+}
+
+#nes_types {
+	margin:0px 10px;
+	overflow:none;
+}
+
+.ne_types {
+	
+}
+
+#nes_types h3 {
+	margin:0px;
+	padding:0px;
+	font-size:11pt;	
+	font-weight:bold;
+	display:inline;
+	vertical-align:middle;
+}
+
+.nes {
+	border-top:1px dashed #888;
+	margin:10px 0px 0px 0px;
+	padding:0px;
+	float:left;
+	width:100%;
+	height:450px;
+	overflow:auto;
+	list-style:none;
+}
+
+.ne_wrapper {
+	float:left;
+	padding:0px;
+	width: 26%;
+	border: 1px solid #ffee88;
+	margin:5px 2%;
+	text-align:center;
+	cursor:pointer;
+}
+
+.ne_wrapper:nth-child(3n + 1) {
+	clear:left;
+}
+
+.hl.ne_wrapper {
+	border: 1px solid dodgerblue;	
+}
+
+.ne_wrapper:hover {	
+	-moz-box-shadow: 0 0 2px 2px #888;
+	-webkit-box-shadow: 0 0 2px 2px #888;
+	box-shadow: 0 0 2px 2px #888;
+}
+
+.ne_thumb {
+	background-color:#e3e3e3;
+	border-top:5px solid transparent;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;	
+	text-align:center;
+}
+
+.ne_thumb img {
+	width:105px;
+	height:79px;	
+}
+
+.ne {
+	float:left;		
+	width:100%;
+	text-align:center;
+	white-space:nowrap;
+	overflow:hidden;
+	border-bottom: 1px solid #fff;	
+}
+
+.ne_uri {
+	visibility:hidden;
+	width:0px;
+	height:0px;
+}
+
+.ne_meta a {
+	vertical-align:middle;
+	font-size:10pt;
+}
+
+.verylow.ne {border-bottom:1px solid crimson;}
+.low.ne {border-bottom:1px solid indianred;}
+.fair.ne {border-bottom:1px solid darkorange;}
+.medium.ne {border-bottom:1px solid orange;}
+.high.ne {border-bottom:1px solid lightgreen;}
+.veryhigh.ne {border-bottom:1px solid yellowgreen;}
+
+.verylow.ne a {font-size:85%;}
+.low.ne a {font-size:90%;}
+.fair.ne a {font-size:100%;}
+.medium.ne a {font-size:110%;}
+.high.ne a {font-size:120%;}
+.veryhigh.ne a {font-size:130%;}
+
+.ec.ne_meta a {font-size:100%;}
+
+.ne_type {
+	margin:5px 0px 0px 0px;
+}
+
+.ne_sub_types {
+	float:left;
+	border-top:1px dotted #888;
+	margin-top:5px;	
+	width:100%;
+	margin-bottom:5px;
+	z-index: 9;
+}
+
+.ne_sub_types > h4, .link_list > h4, .ne_dbpedia_link > h4 {	
+	margin:2px 0px;
+	background-color:#e3e3e3;
+}
+
+.ne_dbpedia_link {
+	float:left;
+	width:100%;
+}
+
+.ne_dbpedia_link a {
+	color:dodgerblue;
+}
+
+.ne_enrichments {
+	float:left;	
+	width:100%;
+	z-index: 9;
+}
+
+.ne_enrichments a {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=") no-repeat scroll right center transparent;
+	padding-right:13px;	
+}
+
+.link_list {
+	border-top:1px dotted #888;
+}
+
+.link_list ul {	
+	list-style:none;
+	padding:0px;
+	margin:5px 0px 0px 0px;
+}
+
+.link_list ul li {
+	margin-bottom:5px;	
+}
+
+.link_list ul li a {
+	color:dodgerblue;
+	font-size:8pt;
+}

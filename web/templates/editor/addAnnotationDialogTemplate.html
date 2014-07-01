@@ -1,0 +1,59 @@
+<div id="add_annotation_dialog">
+	<div class="picker">
+		<header>
+			<h4>Add annotation</h4>
+		</header>
+		<form>			
+			<table class="picker_table">
+				<tr>
+					<td><label for="dbpedia">Search DBpedia</label></td>
+					<td><input id="dbpedia" name="dbpedia" value=""></input></td>
+				</tr>
+				<tr>
+					<td><label for="entity">Label</label></td>
+					<td><input id="entity" name="entity" value="<%=annotation ? annotation.get('label') : ''%>"></input></td>
+				</tr>
+				<tr>
+					<td><label for="entity_url">URL</label></td>
+					<td>
+						<% if(!annotation) {%>
+							<input id="entity_url" name="entity_url" value=""></input>
+						<%} else if(annotation.get('url')) {%>
+							<input id="entity_url" name="entity_url" value="<%=annotation ? annotation.get('url') : ''%>"></input>
+						<%} else if(annotation.get('disambiguationURL')) {%>
+							<input id="entity_url" name="entity_url" value="<%=annotation ? annotation.get('disambiguationURL') : ''%>"></input>
+						<%} else {%>
+							<input id="entity_url" name="entity_url" value=""></input>							
+						<%}%>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="hyperlink">Add link</label></td>
+					<td><input id="hyperlink" name="hyperlink" value=""></input></td>
+					<td><div class="add_link button small green">add</div></td>
+				</tr>
+				<tr>
+					<td><label for="hyperlinks">Hyperlinks</label></td>
+					<td>
+						<div id="hyperlinks">
+							<% if (annotation) { %>
+								<% _.each(annotation.get('enrichments'), function(enr) { %>							
+									<div id="<%=enr.url.hashCode()%>" class="button small red hyperlink"><%=enr.url%></div>							
+								<% }); %>
+							<% }%>
+						</div>
+						<!-- <textarea id="hyperlinks" name="hyperlinks" value=""></textarea> -->
+					</td>
+				</tr>
+				<tr>
+					<td><label for="start_time">Start time</label></td>
+					<td><input id="start_time" name="start_time" value="<%=annotation ? annotation.get('prettyStartTime') : selectedChapter.get('prettyStartTime')%>" placeholder="hh:MM:ss"></input></td>
+				</tr>
+				<tr>
+					<td><label for="end_time">End time</label></td>
+					<td><input id="end_time" name="end_time" value="<%=annotation ? annotation.get('prettyEndTime') : selectedChapter.get('prettyEndTime')%>" placeholder="hh:MM:ss"></input></td>
+				</tr>
+			</table>			
+		</form>
+	</div>	
+</div>

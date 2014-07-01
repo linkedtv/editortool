@@ -1,0 +1,74 @@
+<div id="enr_wrapper">
+	
+	<% if(enrichments.length > 0) { %>	
+	<div id="enr_types">
+				
+		<h3>Filter by</h3>	
+					
+		<select id="enr_type_select">
+			<option value="all" <%=selSource == null && selEntity == null ? 'selected' : ''%>>All types</option>
+			<% _.each(sources, function(source){ %>
+				<option class="enr_source" value="<%=source%>" <%=selSource == source ? 'selected' : ''%>>
+					<%=source%>
+				</option>
+			<% }); %>
+			<% _.each(entities, function(entity){ %>
+				<option class="enr_entity" value="<%=entity.label%>" <%=selEntity == entity.label ? 'selected' : ''%>>
+					<%=entity.label%> (entity)
+				</option>
+			<% }); %>
+		</select>
+		
+		| &nbsp; Add selected to annotation <div id="enr_add_to_ec" class="button small">
+		Add [<%=Object.keys(selected).length%>]</div>
+	</div>
+		
+	<ul class="enrichments">
+		<% _.each(enrichments, function(enr, index) { %>
+			
+			
+			<% if(index == 0 || (selEntity && enr.get('source') != enrichments[index - 1].get('source')) 
+			|| (selSource && enr.get('derivedFrom')[0].uri != enrichments[index - 1].get('derivedFrom')[0].uri)) {%>
+			<% if(selSource) {%>
+			<li class="enr_type_separator">
+				<% _.each(enr.get('derivedFrom'), function(entity) { %>
+					<div class="enr_types button small orange"><%=entity.label%></div>
+				<% }); %>				
+			</li>
+			<% } else if(selEntity) {%>
+			<li class="enr_type_separator">
+				<div class="enr_types button small yellow"><%=enr.get('source')%></div>
+			</li>
+			<%}}%>
+			
+			<li id="<%=enr.cid%>" class="enr_wrapper <%= approved[enr.get('bodyURI')] ? 'approved' : ''%> <%= selected[enr.get('url')] ? 'sel' : ''%>">				
+				
+				<%=enr.get('date')%>
+				
+				<!-- THUMBNAIL -->
+				<div class="enr_thumb">
+					<img src="<%=enr.get('image')%>">
+				</div>
+					
+				<!-- THE ENRICHMENT -->
+				<div class="enr <%=enr.get('confidenceClass')%>">
+				
+					<div class="enr_meta">
+						<a href="<%=enr.get('url')%>" title="View enrichments" target="_external">
+						<% _.each(enr.get('derivedFrom'), function(entity) { %>
+							<%=entity.label%>
+						<% }); %>
+						</a>
+					</div>
+					
+				</div>
+				
+			</li>			
+			
+		<% }); %>
+	</ul>
+	
+	<%} else { %>
+		<div class="warning" style="margin-left:20px;">No enrichments available for this chapter</div>		
+	<%}%>
+</div>

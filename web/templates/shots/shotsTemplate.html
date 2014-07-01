@@ -1,0 +1,8 @@
+<header>
+	<h3>Shots from <%=chapter.get('title')%></h3>
+</header>
+<ul>
+	<% _.each(shots, function(shot){ %>
+		<li id="<%=shot.cid%>" class="shot"><img src="<%= shot.get('image') %>" alt="[<%= shot.get('id') %>]"></li>
+	<% }); %>
+</ul>

@@ -1,0 +1,45 @@
+/* --------------- shotsView --------------- */
+
+/*placeholder from annotationsTemplate.html*/
+#shots {
+	display:none;
+}
+
+#shots > header {
+	margin:13px;	
+	padding:0px;	
+}
+
+#shots > header > h3 {
+	margin:0px;
+	padding:0px;
+	display:inline;
+	vertical-align:middle;
+}
+
+#shots ul {
+	border-top: 1px dashed #888888;
+	height:450px;	
+	padding:10px;
+	margin:10px 0px 0px;
+	overflow:auto;
+}
+
+.shot {
+	item-decoration:none;
+	display:inline;
+	cursor:pointer;
+	border:3px solid #e7e7e7;
+}
+
+.shot img:hover {
+	border: 1px solid #888;
+	-moz-box-shadow: 0 0 1px 1px #888;
+	-webkit-box-shadow: 0 0 1px 1px #888;
+	box-shadow: 0 0 1px 1px #888;
+}
+
+.shot img {
+	width:105px;
+	height:79px;
+}
